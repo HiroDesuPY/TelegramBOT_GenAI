@@ -44,10 +44,13 @@ def conversaria(message):
     markup = types.InlineKeyboardMarkup()
     sair = types.InlineKeyboardButton("Sair", callback_data="sair")
     markup.add(sair)
-    resposta = prompt(message.text)
-    bot.send_message(message.chat.id, resposta, reply_markup=markup)
+    try:
+        resposta = prompt(message.text)
+        bot.send_message(message.chat.id, resposta, reply_markup=markup)
 
-
+    except Exception as e:
+        bot.send_message(message.chat.id, f"Desculpe, ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde. Erro: {e}", reply_markup=markup)
+        print(f"Erro ao processar a mensagem: {e}")
 
 
 
