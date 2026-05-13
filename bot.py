@@ -76,4 +76,4 @@ def start(message):
 
 
 
-bot.polling(none_stop=True, timeout=90)
+bot.polling(none_stop=True, timeout=200)
