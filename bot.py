@@ -20,7 +20,7 @@ def handle_callback_query(call: types.CallbackQuery):
     match call.data:
         case "start":
             usuarios[call.message.chat.id] = True
-            bot.send_message(call.message.chat.id, "Olá! Eu sou o HirosBot, um assistente virtual criado para responder às suas perguntas e ajudá-lo com suas dúvidas. Sinta-se à vontade para me perguntar qualquer coisa ou solicitar informações. Estou aqui para ajudar! Pressione o botão 'Sair' a qualquer momento para encerrar a conversa.")
+            bot.send_message(call.message.chat.id, "Olá! Eu sou o HirosBot, um assistente virtual criado para responder às suas perguntas e ajudá-lo com suas dúvidas. Sinta-se à vontade para me perguntar qualquer coisa ou solicitar informações. Estou aqui para ajudar! Pressione o botão 'Sair' a qualquer momento para encerrar a conversa.", reply_markup=types.InlineKeyboardMarkup().add(types.InlineKeyboardButton("Sair", callback_data="sair")))
 
 
         case 'about':
